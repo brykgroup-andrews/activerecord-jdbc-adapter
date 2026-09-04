@@ -51,7 +51,7 @@ class VersionTest < Test::Unit::TestCase
 
   def connection_stub(version, full_version = false)
     raw_connection = mock('raw_connection')
-    raw_connection.stubs(:execute)
+    raw_connection.stubs(:execute).returns([])
     raw_connection.stubs(:exec_params)
     raw_connection.stubs(:decode_dates=)
 

@@ -208,7 +208,7 @@ class PostgresSimpleTest < Test::Unit::TestCase
 
   def test_extensions
     if connection.supports_extensions?
-      assert_include connection.extensions, 'plpgsql'
+      assert_include connection.extensions, 'pg_catalog.plpgsql'
       assert connection.extension_enabled?('plpgsql')
       assert ! connection.extension_enabled?('invalid')
     else
